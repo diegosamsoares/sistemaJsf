@@ -65,7 +65,7 @@ public class LoginBean {
 		
 		if	(usuario!=null){
 			usuarioWeb.Loga(usuario);
-			return "/pages/lista?faces-redirect=true";
+			return "/pages/inicio?faces-redirect=true";
 		}else{
 			new FacesUtil().adicionaMenssagemDeErro("Erro ao autenticar,Login ou Senha inválidos! ");
 			return "login";
