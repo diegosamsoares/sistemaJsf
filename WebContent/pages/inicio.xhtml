@@ -4,7 +4,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:t="http://myfaces.apache.org/tomahawk">
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	 xmlns:p="http://primefaces.org/ui">
 
 
 
@@ -12,21 +13,13 @@
 <ui:composition template="/templates/template_principal.xhtml">
 	<ui:define name="corpo">
 
-		<h1>Bem Vindo</h1>
-
-
-		<h:form>
-
-
-
-
-
-			
-
-
-		</h:form>
-
-
+	<h:form>
+		<p:panel id="basic" header="Sistema JSF" style="margin-bottom:20px" >
+		 	<p:graphicImage  value ="../resources/imagens/bemvindo.png"  />
+		</p:panel>
+		
+	</h:form>	
+	
 	</ui:define>
 
 
