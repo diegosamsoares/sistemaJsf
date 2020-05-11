@@ -13,8 +13,13 @@
 						http://www.springframework.org/schema/aop 
 						http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
-	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="br.com.triadworks.bugtracker"></context:component-scan>
+	<context:annotation-config>
+	
+	</context:annotation-config>
+	
+	<context:component-scan base-package="br.com.triadworks.bugtracker">
+	
+	</context:component-scan>
 	
 	<tx:annotation-driven/>
 	<bean id="entityManagerFactory"
