@@ -9,9 +9,9 @@
 		<properties>
 			<!-- Propriedades JDBC -->
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sistemajsf" />
-			<property name="javax.persistence.jdbc.user" value="postgres" />
-			<property name="javax.persistence.jdbc.password" value="123" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://gsmmhihydcybra:8a7966391f1a10e8823d00660fc13b6c6f26f1f09540a65f734929d0a2d66b01@ec2-34-230-149-169.compute-1.amazonaws.com:5432/d18gp07957pmsu" />
+			<property name="javax.persistence.jdbc.user" value="gsmmhihydcybra" />
+			<property name="javax.persistence.jdbc.password" value="8a7966391f1a10e8823d00660fc13b6c6f26f1f09540a65f734929d0a2d66b01" />
 			<property name="hibernate.default_schema" value="padrao"/>
 			<!-- Configuracoes especificas do Hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
