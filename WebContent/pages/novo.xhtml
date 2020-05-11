@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+<ui:composition template="/templates/template_principal.xhtml">
+	<ui:define name="corpo">
+	
+	
+						<h1>Novo Usuário</h1>
+						<h:form id="form">
+							
+						<h:outputLabel value="Nome" for="nome" ></h:outputLabel>
+						
+						<h:inputText id="nome"  value="#{usuarioBean.usuario.nome}" styleClass="texto-longo" label="Nome" required="true">
+						<f:validateLength minimum="4" maximum="20"></f:validateLength>
+						<f:validateRegex pattern="[a-zA-Z]+"></f:validateRegex>
+						</h:inputText>
+							
+							
+							<h:outputLabel value="Login" for="login"></h:outputLabel>
+							<h:inputText id="login" value="#{usuarioBean.usuario.login}" label="Login"/>
+							
+							<h:outputLabel value="Senha" for="senha"></h:outputLabel>
+							<h:inputSecret id="senha"  value="#{usuarioBean.usuario.senha}" label="Senha" required="true">
+								<f:validator validatorId="senhaForte"/>
+							</h:inputSecret>
+						
+							<div class="acoes-principais">
+								<h:commandLink value="Lista de Usuarios" action="lista" immediate="true">
+								
+								</h:commandLink>
+								&#160;
+								<h:commandButton value="Salvar" action="#{usuarioBean.adiciona}"  label="Senha">
+								<f:ajax render="@form  :msg" execute="@form"></f:ajax>
+								</h:commandButton>
+						
+							</div>					
+						</h:form>
+			
+	</ui:define>
+	</ui:composition>
+</html>

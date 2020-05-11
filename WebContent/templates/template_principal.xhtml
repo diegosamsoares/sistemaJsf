@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+<h:head>
+ 	<h:outputStylesheet library="css" name="app.css"></h:outputStylesheet>	
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Inicio</title>
+</h:head>
+<h:body>
+
+<div id="cabecalho">
+	<ui:insert name="cabecalho">
+	<ul id="menu-principal">
+		<li>
+		<div id="user-info">
+				<h:form>
+				#{usuarioWeb.usuario.login} - <h:commandLink value="Sair" action="#{loginBean.sair}">
+				</h:commandLink>
+			
+			</h:form>
+		</div>
+		
+		</li>
+		<li>
+		<h:link value="Usuarios" outcome="/pages/lista"></h:link>
+		</li>
+		<li>
+		<h:link value="Bugs" outcome="/pages/bug/lista"></h:link>
+		</li>
+	</ul>
+	
+	</ui:insert>
+
+</div>
+		<!-- 
+		<h:messages errorClass="errors" id="msg" infoClass="notice"></h:messages>
+		 -->
+		<p:growl autoUpdate="true" id="msg"> </p:growl>
+
+
+	<div id="conteudo">
+		<div id="container">
+			
+			<div id="ajax-loading">
+				<p:ajaxStatus>
+					<f:facet name="start">
+						<h:graphicImage library="imagens" name="ajax-loader.gif"></h:graphicImage>
+					</f:facet>
+					
+					<f:facet name="complete">
+						<h:outputText value=""></h:outputText>					
+					</f:facet>
+				</p:ajaxStatus>
+			</div>
+			
+			<ui:insert name="corpo"/>
+	
+				
+		</div>			
+</div>
+		
+		
+		<div id="rodape">
+			<div class="rodape-bar">
+				<strong>Bug Tracker</strong> - Controle de Bug | TriadWorks
+			
+			</div>
+		</div>
+
+</h:body>
+
+	
+</html>
