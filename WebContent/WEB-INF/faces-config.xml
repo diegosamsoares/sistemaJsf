@@ -6,7 +6,7 @@
     version="2.2">
 	<application>
 		<message-bundle>
-				br.com.triadworks.bugtracker.resources.Mensagens
+				br.com.dstech.sistemajsf.resources.Mensagens
 		
 		</message-bundle>	
 		<el-resolver>

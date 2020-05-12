@@ -6,8 +6,7 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
-import br.com.triadworks.bugtracker.controller.UsuarioWeb;
-import br.com.triadworks.bugtracker.modelo.Usuario;
+import br.com.dstech.sistemajsf.controller.UsuarioWeb;
 
 public class AutorizacaoListener implements PhaseListener{
 

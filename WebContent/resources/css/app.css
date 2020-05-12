@@ -283,10 +283,12 @@ table.dados tr td{
 }
 
 .impar {
+	text-transform: uppercase;
 	background:none repeat scroll 0 0 #EEE;
 }
 .par {
-	background-color: #a29bc0;
+	background-color: #808080;
+	text-transform: uppercase;
 }
 
 /* errors and notice */
@@ -403,7 +405,7 @@ table.dados tr td{
 		}
 		
 		#menu-principal li a {
-			font-size: 12pt;
+			font-size: 12px;
 			text-transform: uppercase;
 			text-decoration: none;
 			font-weight: bold;
@@ -561,7 +563,7 @@ label {
 }
 
 #user-info {
-	background: #4682B4;
+	background: rgb(0, 171, 15);
 	position: absolute;
 	/**z-index: 99999;**/
 	top: 0;
@@ -569,16 +571,18 @@ label {
 	padding: 20px 10px;
 	text-align: right;
 	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
 }
 
 body{
-	background-color:#1C1C1C; 
+	background-color:rgb(40, 40, 40) ;
 	text-align:center;
 	
 	}
 	
 table.dados tr th{
-	background-color:#2a2948;
+	background-color:rgb(40, 40, 40) ;
 	color:#fff;
 	color:1em;
 	padding:10px;
@@ -586,13 +590,14 @@ table.dados tr th{
 }
 
 #menu-principal li a:hover {
-			color: #2a2948;
-			background-color: #4682B4;
+			color: rgb(40, 40, 40) ;
+			background-color: #ffffff;
 			-moz-border-radius: 5px;
 			-webkit-border-radius: 5px;
 			-khtml-border-radius: 5px;
 			-opera-border-radius: 5px;
 			border-radius: 5px;
+			font-size: 14px;
 		}
 		
 #cabecalho {
@@ -602,7 +607,8 @@ table.dados tr th{
 	position:relative;
 	overflow:hidden;
 /* 	background-image:url(../resources/imagens/bgHeader.png); */
-	background-color :#87CEEB; 
+	background-color : rgb(40, 40, 40) ;
+	border-bottom :2px solid rgb(0, 171, 15);
 	background-position:0px -100px;
 	background-repeat:repeat-x;
 	}
