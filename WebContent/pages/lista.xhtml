@@ -4,7 +4,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:t="http://myfaces.apache.org/tomahawk">
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:p="http://primefaces.org/ui">
 
 
 
@@ -20,56 +21,55 @@
 
 			<div class="acoes-principais">
 
-				<h:commandLink value="Cadastrar Novo" action="novo"></h:commandLink>
+				<h:commandButton value="Cadastrar Novo" action="novo"/>
 				&#160;
-				<h:commandButton action="#{usuarioBean.lista}" value="Listar">
-				</h:commandButton>
+				<h:commandButton action="#{usuarioBean.lista}" value="Listar"/>
 
 			</div>
+			&#160;
 
-
-
-
-			<h:dataTable value="#{usuarioBean.usuarios}" var="usuario"
+			<p:panel header="Listagem de Usuários">
+			
+			<p:dataTable value="#{usuarioBean.usuarios}" var="usuario"
 				styleClass="dados" rowClasses="impar , par">
 
-				<h:column>
-
+				<p:column>
 					<f:facet name="header">ID</f:facet>
-			#{usuario.id}
-		</h:column>
+						#{usuario.id}
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">NOME</f:facet>
-			#{usuario.nome}
-		</h:column>
+						#{usuario.nome}
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">LOGIN</f:facet>
-			#{usuario.login}
-		</h:column>
+						#{usuario.login}
+				</p:column>
 
-				<h:column>
+				<p:column>
 
 					<f:facet name="header">Ações</f:facet>
-					<h:commandLink value="Remover"
+					<h:commandLink value=""
 						action="#{usuarioBean.remove(usuario)}">
 
 						<f:ajax render="@form :msg"></f:ajax>
-
+						<i class="material-icons">delete</i>
 					</h:commandLink>			
-			&#160;
-			<h:commandLink value="alterar" action="edita">
+					&#160;
+					<h:commandLink value="" action="edita">
 						<f:setPropertyActionListener value="#{usuario}"
 							target="#{usuarioBean.usuario}"></f:setPropertyActionListener>
+						<i class="material-icons">create</i>
 					</h:commandLink>
-				</h:column>
+				</p:column>
+
+			</p:dataTable>
+			
+			</p:panel>
 
 
-
-
-
-			</h:dataTable>
 
 
 		</h:form>

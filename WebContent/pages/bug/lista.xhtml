@@ -3,61 +3,70 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets">
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
     
 	<ui:composition template="/templates/template_principal.xhtml">
 		<ui:define name="corpo">
-			<h1>Listagem de Bugs</h1>
 	
 			<h:form id="form">
-				<div class="acoes-principais">
-					<h:commandLink value="Novo" action="novo">
-						
-					</h:commandLink>
+			<div class="acoes-principais">
+					<h:commandButton value="Novo" action="novo"/>				
 					&#160;
 					<h:commandButton value="Listar" action="#{bugBean.lista}">
 						<f:ajax render="@form :mensagens" />
 					</h:commandButton>
 				</div>
-					
-				<h:dataTable value="#{bugBean.bugs}" var="bug"
-						styleClass="dados" rowClasses="impar, par">
-					<h:column>
-						<f:facet name="header">ID</f:facet>
-						#{bug.id}
-					</h:column>
-					<h:column>
-						<f:facet name="header">Sumário</f:facet>
-						#{bug.sumario}
-					</h:column>
-					<h:column>
-						<f:facet name="header">Status</f:facet>
-						#{bug.status}
-					</h:column>
-					<h:column>
-						<f:facet name="header">Responsável</f:facet>
-						#{bug.responsavel.nome}
-					</h:column>
-					
-					<h:column>
-						<f:facet name="header">Data</f:facet>
-						<h:outputText value="#{bug.criadoEm}">
-							<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
-						
-						</h:outputText>
-						
-					</h:column>
-					
-					
-					<h:column>
-						<f:facet name="header">Ações</f:facet>
-						<h:commandLink value="remover" action="#{bugBean.remove(bug)}" onclick="return confirm('Deseja excluir');">
-						<f:ajax render="@form :msg"></f:ajax>
-						</h:commandLink>
-					</h:column>
+			<p:panel header="Listagem de Bugs">
+			
+			
 				
 					
-				</h:dataTable>
+				<p:dataTable value="#{bugBean.bugs}" var="bug"
+						styleClass="dados" rowClasses="impar, par" resizableColumns="true">
+					<p:column>
+						<f:facet name="header">ID</f:facet>
+						#{bug.id}
+					</p:column>
+					<p:column>
+						<f:facet name="header">Sumário</f:facet>
+						#{bug.sumario}
+					</p:column>
+					<p:column>
+						<f:facet name="header">Status</f:facet>
+						#{bug.status}
+					</p:column>
+					<p:column>
+						<f:facet name="header">Responsável</f:facet>
+						#{bug.responsavel.nome}
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">Data</f:facet>
+						<p:outputLabel value="#{bug.criadoEm}">
+							<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+						
+						</p:outputLabel>
+						
+					</p:column>
+					
+					
+					<p:column>
+						<f:facet name="header">Ações</f:facet>
+						<h:commandLink value="" action="#{bugBean.remove(bug)}" onclick="return confirm('Deseja excluir');">
+						<f:ajax render="@form :msg"></f:ajax>
+						<i class="material-icons">delete</i>
+						</h:commandLink>
+						&#160;
+						<h:commandLink value="" action="edita" >
+							<f:setPropertyActionListener value="#{bug}" target="#{bugBean.bug}"></f:setPropertyActionListener>
+							<i class="material-icons">create</i>
+						</h:commandLink>
+					</p:column>
+				
+					
+				</p:dataTable>
+			</p:panel>
 				
 				
 			</h:form>

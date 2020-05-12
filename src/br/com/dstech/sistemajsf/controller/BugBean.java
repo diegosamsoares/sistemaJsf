@@ -59,7 +59,7 @@ public class BugBean {
 	}
 
 	public void adiciona() {
-		System.out.println("salva");
+		System.out.println("salvafeefaefaef");
 		dao.salva(bug);
 		this.bug = new Bug();
 		this.util.adicionaMenssagemDeSucesso("Bug adicionado com sucesso!");
@@ -88,7 +88,20 @@ public class BugBean {
 	public void remove(Bug bug) {
 		dao.remove(bug);
 		this.bugs = dao.lista();
+		System.out.println("teste");
 		this.util.adicionaMenssagemDeSucesso("Bug Removido com Sucesso");
 	}
+	
+	public void alterar() {
+		dao.atualiza(bug);
+		this.bugs = dao.lista();
+		this.util.adicionaMenssagemDeSucesso("Bug Atualizado com Sucesso");
+	}
+
+	public void setBug(Bug bug) {
+		this.bug = bug;
+	}
+	
+	
 
 }
